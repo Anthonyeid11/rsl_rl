@@ -94,8 +94,6 @@ class Memory(torch.nn.Module):
     def reset(self, dones=None):
         if dones is not None:
             dones = dones.bool()
-            print("ACTUALY WORKS")
-        print("DID IT WORK???")
         # When the RNN is an LSTM, self.hidden_states_a is a list with hidden_state and cell_state
         for hidden_state in self.hidden_states:
             hidden_state[..., dones, :] = 0.0
